@@ -1,0 +1,35 @@
+<h1>Listing contacts</h1>
+<%= form_tag contacts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :first_name => nil %>
+  </p>
+<% end %>
+<table>
+  <tr>
+<th><%= link_to "First Name",:sort=> "first_name" %></th>
+<th><%= link_to "Last Name",:sort=> "last_name" %></th>
+<th><%= link_to "Address",:sort=> "address" %></th>
+<th><%= link_to "Phone Number",:sort=> "phone_number" %></th>
+<th><%= link_to "E-Mail",:sort=> "email" %></th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.first_name %></td>
+    <td><%= contact.last_name %></td>
+    <td><%= contact.address %></td>
+    <td><%= contact.phone_number %></td>
+    <td><%= contact.email %></td>
+    <td><%= link_to 'Show', contact %></td>
+    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+    <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @contacts %>
+<br />
+
+<%= link_to 'New Contact', new_contact_path %>
+
