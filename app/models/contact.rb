@@ -4,7 +4,7 @@ validates_presence_of :first_name, :last_name
 
 def self.search(search)
     if search
-      where('first_name LIKE ?', "%#{search}%")
+      where('LOWER(first_name) LIKE ?', "%#{search}%")
     else
       scoped
     end
