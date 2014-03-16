@@ -3,12 +3,14 @@
 
   <%= hidden_field_tag :direction, params[:direction] %>
   <%= hidden_field_tag :sort, params[:sort] %>
+<!---searchable contacts --->
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :first_name => nil %>
   </p>
 <% end %>
-<table>
+<!---make contacts sortable --->
+<table class="table">
   <tr>
 <th><%= link_to "First Name",:sort=> "first_name" %></th>
 <th><%= link_to "Last Name",:sort=> "last_name" %></th>
@@ -30,7 +32,7 @@
   </tr>
 <% end %>
 </table>
-
+<!---paginate contacts --->
 <%= will_paginate @contacts %>
 <br />
 

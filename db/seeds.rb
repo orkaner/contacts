@@ -32,4 +32,16 @@ contacts=Contact.create([{:first_name => 'Adam',
 
 {:first_name => 'Simona',
   :last_name =>'Volt',
-  :address => "Gothersgade 14", :phone_number=>40020606 , :email=>"simona@simona.com"}])
+  :address => "Gothersgade 14", :phone_number=>40020606 , :email=>"simona@simona.com"},
+
+  {:first_name => 'Eva',
+  :last_name =>'Longoria',
+  :address => "Texas", :phone_number=>40603333 , :email=>"eva@aeva.com"},
+
+  {:first_name => 'Ken',
+  :last_name =>'Simon',
+  :address => "Okisanava 44", :phone_number=>40602030 , :email=>"ken@ken.com"},
+
+  {:first_name => 'Ryu',
+  :last_name =>'Hontari',
+  :address => "Tokyo", :phone_number=>20604033 , :email=>"ryu@ryu.com"},])

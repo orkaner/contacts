@@ -4,7 +4,12 @@ class ContactsController < ApplicationController
 
   # GET /contacts
   # GET /contacts.json
-  def index
+
+
+  
+ def index
+
+#Searching contacts, also columns are sortable as well as pagination of every 5 pagas
   @contacts = Contact.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
 
 
